@@ -7,18 +7,20 @@ function Todo({item,text,ItemList,setItemList}) {
     }
 
     const completeHandler=()=>{
-        setItemList(ItemList.map(it=>{
-            if(it.id===ItemList.id){
-                return{
-                    ...it,completed:!it.completed
-                }
-            }
-            return it
-        })) 
-    }
+       ItemList.filter((it)=>{
+           if(it.id===item.id){
+               it.completed=!it.completed;
+               return it
+           }
+           else{
+               return it;
+           }
+       })
+            console.log(ItemList)
+        }
     return (
         <div>
-            <li className={`${ItemList.completed?"completed":""}`}>{
+            <li className={item.completed?"completed":""}>{
             text}
             <button onClick={DeleteHandler}>Delete</button>
             <button onClick={completeHandler}>Complete</button>
