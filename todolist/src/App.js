@@ -17,10 +17,11 @@ function App() {
       const filterHandler=()=>{
       switch(status){
         case 'completed':
-          setFilteredList(ItemList.filter(item=>item.completed===true))
+          setFilteredList(ItemList.filter((item=>item.completed===true)))
+            console.log("fitered item")
           break;
         case 'uncompleted':
-          setFilteredList(ItemList.filter(item=>item.completed===false))
+          setFilteredList(ItemList.filter((item=>item.completed===false)))
           break;
         default:
           setFilteredList(ItemList)
