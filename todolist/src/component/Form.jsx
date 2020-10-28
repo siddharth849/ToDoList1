@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react'  
 
 function Form({setAddItem,AddItem,setItemList,setStatus,ItemList}) {
 
@@ -8,8 +8,8 @@ function Form({setAddItem,AddItem,setItemList,setStatus,ItemList}) {
 
     const ListHandler=(e)=>{
         e.preventDefault()
-        setItemList([...ItemList,{text:AddItem,completed:false,
-        id:Math.random()*1000}])
+        setItemList([...ItemList,{"text":AddItem,"completed":false,
+        "id":Math.random()*1000}])
         setAddItem("")
     }
 
@@ -26,8 +26,8 @@ function Form({setAddItem,AddItem,setItemList,setStatus,ItemList}) {
             <div>
                 <select onChange={statusHandler}>
                     <option value="all">All</option>
-                    <option value="complete">Complete</option>
-                    <option value="Incomplete">Incomplete</option>
+                    <option value="completed">Complete</option>
+                    <option value="uncompleted">Incomplete</option>
                 </select>
             </div>
             </form>
