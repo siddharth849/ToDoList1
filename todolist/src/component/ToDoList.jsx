@@ -6,7 +6,7 @@ function ToDoList({setItemList,ItemList,filteredList}) {
         <div>
             <ul>
                 {
-                    filteredList.map((item)=>{
+                    filteredList.map((item=>{
                         return(<Todo
                         key={item.id} 
                         setItemList={setItemList}
@@ -14,7 +14,7 @@ function ToDoList({setItemList,ItemList,filteredList}) {
                         item={item}
                         ItemList={ItemList}
                         />)
-                    })
+                    }))
                 }
             </ul>
         </div>
